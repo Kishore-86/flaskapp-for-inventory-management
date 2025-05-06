@@ -60,38 +60,6 @@ Hosting is currently **terminated**, but I'm experienced in **cloud deployments*
 
 ---
 
-## 📁 Project Structure
-my-proj/
-├── app.py
-├── config.py
-├── db_setup.sql
-├── requirements.txt
-├── utils.py
-├── venv/                  # Virtual environment
-│   ├── Include/
-│   ├── Lib/
-│   ├── Scripts/
-│   └── ...
-├── screenshots/
-│   ├── add_location.png
-│   ├── add_product.png
-│   ├── home.png
-│   ├── move_product.png
-│   └── report.png
-├── static/
-│   ├── images/
-│   │   └── image-1.jpg
-│   └── style.css
-├── templates/
-│   ├── base.html
-│   ├── home.html
-│   ├── location.html
-│   ├── movement.html
-│   ├── product.html
-│   └── report.html
-
----
-
 ## 🛠️ How to Run Locally
 
 ```bash
