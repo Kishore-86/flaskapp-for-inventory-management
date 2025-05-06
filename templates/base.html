@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Inventory Management</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/product">Product</a>
+    <a href="/location">Location</a>
+    <a href="/movement">Movement</a>
+    <a href="/report">Report</a>
+  </nav>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

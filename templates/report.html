@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>Stock Report</h2>
+  <table>
+    <thead>
+      <tr><th>Product ID</th><th>Product Name</th><th>Location</th><th>Quantity</th></tr>
+    </thead>
+    <tbody>
+      {% for row in report_data %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

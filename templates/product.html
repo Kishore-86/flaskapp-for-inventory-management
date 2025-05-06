@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>Add Product</h2>
+  <form method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Quantity:</label>
+    <input type="number" name="quantity" required>
+    <label>Price:</label>
+    <input type="number" step="0.01" name="price" required>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Qty</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+        <tr><td>{{p[0]}}</td><td>{{p[1]}}</td><td>{{p[2]}}</td><td>{{p[3]}}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

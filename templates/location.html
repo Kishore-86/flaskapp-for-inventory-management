@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>Add Location</h2>
+  <form method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <button type="submit">Add Location</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Name</th></tr>
+    </thead>
+    <tbody>
+      {% for l in locations %}
+        <tr><td>{{l[0]}}</td><td>{{l[1]}}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

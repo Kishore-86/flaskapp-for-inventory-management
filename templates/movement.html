@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  {% if message %}
+    <div class="alert alert-danger">{{ message }}</div>
+  {% endif %}
+
+  <h2>Move Product</h2>
+  <form method="post">
+    <label for="product">Product:</label>
+    <select id="product" name="product_id" required>
+      <option value="" disabled selected>Choose a product</option>
+      {% for p in products %}
+        <option value="{{ p[0] }}">{{ p[1] }} ({{ p[2] }} in stock)</option>
+      {% endfor %}
+    </select>
+
+    <label for="from_loc">From Location:</label>
+    <select id="from_loc" name="from_location">
+      <option value="">– Initial Stock –</option>
+      {% for l in locations %}
+        <option value="{{ l[0] }}">{{ l[1] }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="to_loc">To Location:</label>
+    <select id="to_loc" name="to_location" required>
+      <option value="" disabled selected>Select destination</option>
+      {% for l in locations %}
+        <option value="{{ l[0] }}">{{ l[1] }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="qty">Quantity:</label>
+    <input id="qty" type="number" name="qty" min="1" required>
+
+    <button type="submit">Move</button>
+  </form>
+
+  <h2>Movement History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date &amp; Time</th>
+        <th>Product</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Qty</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in movements %}
+        <tr>
+          <td>{{ m[0] }}</td>
+          <td>{{ m[1] }}</td>
+          <td>{{ m[2] }}</td>
+          <td>{{ m[3] or '––' }}</td>
+          <td>{{ m[4] or '––' }}</td>
+          <td>{{ m[5] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
