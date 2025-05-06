@@ -1,0 +1,1 @@
+# flaskapp-for-inventory-management
