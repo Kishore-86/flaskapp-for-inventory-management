@@ -53,9 +53,10 @@ def movement():
         cursor.execute("SELECT quantity FROM product WHERE product_id = %s", (product_id,))
         result = cursor.fetchone()
         available_qty = result[0] if result else 0
-
+        val = int(qty-available_qty)
+        
         if from_location and qty > available_qty:
-            message = f"Error: Only {available_qty} units available. Cannot move {qty} units."
+            message = f"Error: Only {available_qty} units. we want {val} more units."
         else:
             cursor.execute("""
                 INSERT INTO productmovement (product_id, from_location, to_location, qty)
